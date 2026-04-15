@@ -1,0 +1,32 @@
+export const defaultTheme = {
+  colors: {
+    primary: '#356B52',
+    primaryDark: '#2A5A44',
+    primaryLight: '#E0EDDF',
+    background: '#F5F6F5',
+    card: '#FFFFFF',
+    textPrimary: '#1F2937',
+    textSecondary: '#6B7280',
+    error: '#EF4444',
+    inputBg: '#F3F4F6',
+    border: '#E5E7EB',
+    success: '#10B981',
+    successBackground: '#DDF0E1',
+    iconGreen: '#4ADE80',
+  },
+  spacing: {
+    xs: 4,
+    sm: 8,
+    md: 16,
+    lg: 24,
+    xl: 32,
+    xxl: 48,
+  },
+  borderRadius: {
+    sm: 6,
+    md: 10,
+    lg: 16,
+    xl: 20,
+    full: 9999,
+  },
+};
