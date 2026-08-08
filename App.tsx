@@ -6,9 +6,17 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 // Screens
-import { SignInScreen } from './src/screens/SignInScreen';
-import { SignUpScreen } from './src/screens/SignUpScreen';
-import { HomeScreen } from './src/screens/HomeScreen';
+import { SignInScreen } from './src/screens/auth/SignInScreen';
+
+// Navigation
+import { TabNavigator } from './src/navigation/TabNavigator';
+import { CreateTrackerScreen } from './src/screens/trackers/CreateTrackerScreen';
+import { TrackerDetailsScreen } from './src/screens/trackers/TrackerDetailsScreen';
+import { TrackerHistoryScreen } from './src/screens/trackers/TrackerHistoryScreen';
+import { CycleDetailsScreen } from './src/screens/trackers/CycleDetailsScreen';
+import { PendingActionsScreen } from './src/screens/home/PendingActionsScreen';
+import { CreateNoteScreen } from './src/screens/notes/CreateNoteScreen';
+import { NoteDetailScreen } from './src/screens/notes/NoteDetailScreen';
 
 // Theme
 import { defaultTheme } from './src/theme/theme';
@@ -54,18 +62,24 @@ function App() {
       <NavigationContainer>
         <Stack.Navigator screenOptions={{ headerShown: false }}>
           {isAuthenticated ? (
-            // App Stack
-            <Stack.Screen name="Home">
-              {(props) => <HomeScreen {...props} setIsAuthenticated={setIsAuthenticated} />}
-            </Stack.Screen>
+            // App Stack (Authenticated)
+            <>
+              <Stack.Screen name="MainTabs">
+                {(props) => <TabNavigator {...props} setIsAuthenticated={setIsAuthenticated} />}
+              </Stack.Screen>
+              <Stack.Screen name="CreateTracker" component={CreateTrackerScreen} />
+              <Stack.Screen name="TrackerDetails" component={TrackerDetailsScreen} />
+              <Stack.Screen name="TrackerHistory" component={TrackerHistoryScreen} />
+              <Stack.Screen name="CycleDetails" component={CycleDetailsScreen} />
+              <Stack.Screen name="PendingActions" component={PendingActionsScreen} />
+              <Stack.Screen name="CreateNote" component={CreateNoteScreen} />
+              <Stack.Screen name="NoteDetails" component={NoteDetailScreen} />
+            </>
           ) : (
             // Auth Stack
             <>
               <Stack.Screen name="SignIn">
                 {(props) => <SignInScreen {...props} setIsAuthenticated={setIsAuthenticated} />}
-              </Stack.Screen>
-              <Stack.Screen name="SignUp">
-                {(props) => <SignUpScreen {...props} setIsAuthenticated={setIsAuthenticated} />}
               </Stack.Screen>
             </>
           )}

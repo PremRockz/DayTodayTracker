@@ -1,18 +1,23 @@
 export const defaultTheme = {
   colors: {
-    primary: '#356B52',
-    primaryDark: '#2A5A44',
-    primaryLight: '#E0EDDF',
-    background: '#F5F6F5',
+    primary: '#10B981', // More vibrant Emerald
+    primaryDark: '#047857',
+    primaryLight: '#D1FAE5',
+    secondary: '#6366F1', // Indigo accent
+    secondaryLight: '#E0E7FF',
+    background: '#F8FAFC', // Slate background (cooler than plain grey)
     card: '#FFFFFF',
-    textPrimary: '#1F2937',
-    textSecondary: '#6B7280',
+    cardAlternate: '#F1F5F9',
+    textPrimary: '#0F172A',
+    textSecondary: '#64748B',
     error: '#EF4444',
-    inputBg: '#F3F4F6',
-    border: '#E5E7EB',
+    inputBg: '#F1F5F9',
+    border: '#E2E8F0',
     success: '#10B981',
-    successBackground: '#DDF0E1',
-    iconGreen: '#4ADE80',
+    successBackground: '#D1FAE5',
+    warning: '#F59E0B',
+    headerBackground: '#10B981',
+    accent: '#FACC15', // Yellow accent
   },
   spacing: {
     xs: 4,
@@ -30,3 +35,4 @@ export const defaultTheme = {
     full: 9999,
   },
 };
+
